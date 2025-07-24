@@ -2,6 +2,7 @@ package bo.edu.ucb.ioc.entities;
 
 import java.util.Date;
 
+// Plain Old Java Object
 public class Pet {
     private int petId;
     private String name;

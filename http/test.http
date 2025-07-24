@@ -1,0 +1,10 @@
+### POST new pet sell
+
+POST http://localhost:8080/api/v1/sell/
+Accept: application/json
+Content-Type: application/json
+
+{
+    "petId": 5,
+    "qtty": 3
+}
