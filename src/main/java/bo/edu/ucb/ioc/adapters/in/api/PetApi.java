@@ -1,4 +1,4 @@
-package bo.edu.ucb.ioc.api;
+package bo.edu.ucb.ioc.adapters.in.api;
 
 import java.util.Map;
 
@@ -8,19 +8,19 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import bo.edu.ucb.ioc.bl.SellPetBl;
-import bo.edu.ucb.ioc.dto.PetSellRequestDto;
-import bo.edu.ucb.ioc.dto.PetSellResponseDto;
-import bo.edu.ucb.ioc.dto.PetStoreException;
+import bo.edu.ucb.ioc.application.dto.PetSellRequestDto;
+import bo.edu.ucb.ioc.application.dto.PetSellResponseDto;
+import bo.edu.ucb.ioc.application.dto.PetStoreException;
+import bo.edu.ucb.ioc.application.service.SellPetUseCase;
 
 @RestController
 @RequestMapping("/api/v1/sell")
 public class PetApi {
 
     
-    private SellPetBl sellPetBl;
+    private SellPetUseCase sellPetBl;
 
-    public PetApi(SellPetBl sellPetBl) {
+    public PetApi(SellPetUseCase sellPetBl) {
         this.sellPetBl = sellPetBl;
     }
 

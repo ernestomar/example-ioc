@@ -12,24 +12,24 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.mockito.Mockito.*;
 
-import bo.edu.ucb.ioc.bl.SellPetBl;
-import bo.edu.ucb.ioc.dao.PetDao;
-import bo.edu.ucb.ioc.dto.PetSellRequestDto;
-import bo.edu.ucb.ioc.dto.PetSellResponseDto;
-import bo.edu.ucb.ioc.dto.PetStoreException;
-import bo.edu.ucb.ioc.entities.Pet;
-import bo.edu.ucb.ioc.entities.PetType;
+import bo.edu.ucb.ioc.application.dto.PetSellRequestDto;
+import bo.edu.ucb.ioc.application.dto.PetSellResponseDto;
+import bo.edu.ucb.ioc.application.dto.PetStoreException;
+import bo.edu.ucb.ioc.application.entities.Pet;
+import bo.edu.ucb.ioc.application.entities.PetType;
+import bo.edu.ucb.ioc.application.port.out.PetRepositoryPort;
+import bo.edu.ucb.ioc.application.service.SellPetUseCase;
 
 @ExtendWith(MockitoExtension.class)
 public class SellPetBlTest {
 
     @Mock
-    PetDao petDao;
+    PetRepositoryPort petDao;
 
     @Test
     public void priceLestThanEqualZero() {
-        PetDao petDao = mock(PetDao.class);
-        SellPetBl sellPetBlTest = new SellPetBl(petDao);
+        PetRepositoryPort petDao = mock(PetRepositoryPort.class);
+        SellPetUseCase sellPetBlTest = new SellPetUseCase(petDao);
 
         PetSellRequestDto petSellRequestDto = new PetSellRequestDto();
         petSellRequestDto.setPetId(10);
@@ -51,7 +51,7 @@ public class SellPetBlTest {
 
         when(petDao.getPetById(10)).thenReturn(mockPet);
 
-        SellPetBl sellPetBlTest = new SellPetBl(petDao);
+        SellPetUseCase sellPetBlTest = new SellPetUseCase(petDao);
 
         PetSellRequestDto petSellRequestDto = new PetSellRequestDto();
         petSellRequestDto.setPetId(10);

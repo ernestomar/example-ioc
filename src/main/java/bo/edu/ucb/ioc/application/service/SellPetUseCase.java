@@ -1,21 +1,22 @@
-package bo.edu.ucb.ioc.bl;
+package bo.edu.ucb.ioc.application.service;
 
 import org.springframework.stereotype.Component;
 
-import bo.edu.ucb.ioc.dao.PetDao;
-import bo.edu.ucb.ioc.dto.PaymentStatus;
-import bo.edu.ucb.ioc.dto.PetSellRequestDto;
-import bo.edu.ucb.ioc.dto.PetSellResponseDto;
-import bo.edu.ucb.ioc.dto.PetStoreException;
-import bo.edu.ucb.ioc.entities.Pet;
-import bo.edu.ucb.ioc.entities.PetType;
+import bo.edu.ucb.ioc.application.dto.PaymentStatus;
+import bo.edu.ucb.ioc.application.dto.PetSellRequestDto;
+import bo.edu.ucb.ioc.application.dto.PetSellResponseDto;
+import bo.edu.ucb.ioc.application.dto.PetStoreException;
+import bo.edu.ucb.ioc.application.entities.Pet;
+import bo.edu.ucb.ioc.application.entities.PetType;
+import bo.edu.ucb.ioc.application.port.in.PetSellPort;
+import bo.edu.ucb.ioc.application.port.out.PetRepositoryPort;
 
 @Component
-public class SellPetBl {
+public class SellPetUseCase implements PetSellPort {
 
-    private PetDao petDao;
+    private PetRepositoryPort petDao;
 
-    public SellPetBl(PetDao petDao) {
+    public SellPetUseCase(PetRepositoryPort petDao) {
         this.petDao = petDao;
     }
 

@@ -1,10 +1,11 @@
-package bo.edu.ucb.ioc.dao;
+package bo.edu.ucb.ioc.adapters.out.repository;
 
 import java.util.Date;
 
-import bo.edu.ucb.ioc.entities.Pet;
+import bo.edu.ucb.ioc.application.entities.Pet;
+import bo.edu.ucb.ioc.application.port.out.PetRepositoryPort;
 
-public class PetDaoMongoImpl implements PetDao{
+public class PetDaoMongoImpl implements PetRepositoryPort{
 
     @Override
     public Pet getPetById(int petId) {

@@ -1,4 +1,4 @@
-package bo.edu.ucb.ioc.dto;
+package bo.edu.ucb.ioc.application.dto;
 
 public class PetSellRequestDto {
     private int petId;

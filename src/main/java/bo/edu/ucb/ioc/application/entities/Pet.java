@@ -1,4 +1,4 @@
-package bo.edu.ucb.ioc.entities;
+package bo.edu.ucb.ioc.application.entities;
 
 import java.util.Date;
 
